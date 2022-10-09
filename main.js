@@ -18,13 +18,11 @@ if (navigator.geolocation) {
             )
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 cityName.innerHTML = data.name;
                 let x = data.main.temp;
 
                 x = `${x}`.replace("0", "").slice(0, 2) + ` c`;
 
-                console.log(x);
                 temperature.innerHTML = x;
                 switch (data.weather[0].main) {
                     case "Clouds":
